@@ -1,23 +1,21 @@
-import './App.css';
+import "./App.css";
+
+import { Container, GridCell, GridContainer } from "./components/Containers";
+import { Subtitle, Title } from "./components/Titles";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="assets/images/devchallengs.jpg" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container direction="column">
+      <Title>Dev Challenge Design System</Title>
+      <Subtitle>Inputs</Subtitle>
+      <GridContainer>
+        <GridCell>Default input</GridCell>
+        <GridCell>Error state</GridCell>
+        <GridCell column="1 / 3">Icons</GridCell>
+        <GridCell column="1 / 3">Size</GridCell>
+        <GridCell column="1 / 3">Variants</GridCell>
+      </GridContainer>
+    </Container>
   );
 }
 
