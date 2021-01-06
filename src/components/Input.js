@@ -50,8 +50,8 @@ const InputWrapper = styled.div`
       }
     }};
     outline: none;
-    width: 200px;
-    height: 30px;
+    width: ${(props) => (props.fullWidth ? "100%" : "200px")};
+    height: ${(props) => props.multiline || "30px"};
     font-size: 14px;
   }
 
@@ -59,14 +59,16 @@ const InputWrapper = styled.div`
     font-size: 10px;
   }
 
-  input {
+  input,
+  textarea {
     border: none;
     outline: none;
     font-size: 14px;
-    height: 30px;
     width: 100%;
   }
-
+  input {
+    height: 30px;
+  }
   &:hover {
     color: #333;
     .input-container {
@@ -95,19 +97,37 @@ const Input = (props) => {
     helperText = "",
     startIcon = "",
     endIcon = "",
+    fullWidth = false,
+    multiline = false,
+    rows = "",
     ...inputProps
   } = props;
 
   return (
-    <InputWrapper error={error} disabled={disabled} size={size}>
+    <InputWrapper
+      fullWidth={fullWidth}
+      error={error}
+      disabled={disabled}
+      size={size}
+      multiline={multiline}
+    >
       <label>{props.label || "Label"}</label>
       <div className="input-container">
         {startIcon && <span className="startIcon">{startIcon}</span>}
-        <input
-          {...inputProps}
-          placeholder={placeholder || "Placeholder"}
-          disabled={disabled}
-        />
+        {multiline ? (
+          <textarea
+            {...inputProps}
+            placeholder={placeholder || "Placeholder"}
+            disabled={disabled}
+            rows={rows}
+          ></textarea>
+        ) : (
+          <input
+            {...inputProps}
+            placeholder={placeholder || "Placeholder"}
+            disabled={disabled}
+          />
+        )}
         {endIcon && <span className="endIcon">{endIcon}</span>}
       </div>
       {helperText && <div className="helper">{helperText}</div>}

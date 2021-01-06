@@ -3,12 +3,14 @@ import "./App.css";
 import { Container, GridCell, GridContainer } from "./components/Containers";
 import Input from "./components/Input";
 import { InputTitle, Subtitle, Title } from "./components/Titles";
+import Logo from "./components/Logo";
 
 import { MdPhone, MdLock } from "react-icons/md";
 
 function App() {
   return (
     <Container direction="column">
+      <Logo src="assets/images/devchallenges.png" alt="Dev challenge logo" />
       <Title>Dev Challenge Design System</Title>
       <Subtitle>Inputs</Subtitle>
       <GridContainer>
@@ -56,10 +58,18 @@ function App() {
               <Input size="sm" />
             </GridCell>
             <GridCell>
-              <InputTitle>{'<Input size="sm"/>'}</InputTitle>
+              <InputTitle>{'<Input size="lg"/>'}</InputTitle>
               <Input size="lg" />
             </GridCell>
           </GridContainer>
+        </GridCell>
+        <GridCell column="1/ 4">
+          <InputTitle>{"<Input fullWidth/>"}</InputTitle>
+          <Input fullWidth />
+        </GridCell>
+        <GridCell column="1/2">
+          <InputTitle>{"<Input multiline rows='4'/>"}</InputTitle>
+          <Input multiline rows="4" />
         </GridCell>
       </GridContainer>
     </Container>
