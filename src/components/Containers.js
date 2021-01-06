@@ -9,8 +9,8 @@ export const Container = styled.div`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-rows: ${(props) => props.rows || "repeat(4, 1fr)"};
-  grid-template-columns: ${(props) => props.columns || "repeat(2,1fr)"};
+  grid-template-rows: ${(props) => props.rows || "120px"};
+  grid-template-columns: ${(props) => props.columns || "repeat(3,1fr)"};
   gap: ${(props) => props.gap || "40px"};
 `;
 

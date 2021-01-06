@@ -15,5 +15,4 @@ export const InputTitle = styled.p`
   font-weight: 400;
   font-size: 13px;
   line-height: 12px;
-  text-align: center;
 `;
