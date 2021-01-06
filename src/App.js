@@ -1,7 +1,8 @@
 import "./App.css";
 
 import { Container, GridCell, GridContainer } from "./components/Containers";
-import { Subtitle, Title } from "./components/Titles";
+import Input from "./components/Input";
+import { InputTitle, Subtitle, Title } from "./components/Titles";
 
 function App() {
   return (
@@ -9,8 +10,14 @@ function App() {
       <Title>Dev Challenge Design System</Title>
       <Subtitle>Inputs</Subtitle>
       <GridContainer>
-        <GridCell>Default input</GridCell>
-        <GridCell>Error state</GridCell>
+        <GridCell>
+          <InputTitle>{"<Input />"}</InputTitle>
+          <Input />
+        </GridCell>
+        <GridCell>
+          <InputTitle>{"<Input error />"}</InputTitle>
+          <Input error />
+        </GridCell>
         <GridCell column="1 / 3">Icons</GridCell>
         <GridCell column="1 / 3">Size</GridCell>
         <GridCell column="1 / 3">Variants</GridCell>
