@@ -1,6 +1,11 @@
 import "./App.css";
 
-import { Container, GridCell, GridContainer } from "./components/Containers";
+import {
+  Container,
+  Footer,
+  GridCell,
+  GridContainer,
+} from "./components/Containers";
 import Input from "./components/Input";
 import { InputTitle, Subtitle, Title } from "./components/Titles";
 import Logo from "./components/Logo";
@@ -72,6 +77,7 @@ function App() {
           <Input multiline rows="4" />
         </GridCell>
       </GridContainer>
+      <Footer>Angel Bulnes (@abulnes16) @ DevChallenges.io </Footer>
     </Container>
   );
 }

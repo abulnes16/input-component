@@ -18,3 +18,9 @@ export const GridCell = styled.div`
   grid-column: ${(props) => props.column || "auto"};
   grid-row: ${(props) => props.rows || "auto"};
 `;
+
+export const Footer = styled.footer`
+  margin-top: 30px;
+  color: #a9a9a9;
+  font-size: 13px;
+`;
